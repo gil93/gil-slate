@@ -1,9 +1,11 @@
-const upload = ( key, pass, host, id, options ) => {
+// set environment
+// set password, themeId, and store
 
-	if ( typeof key == 'undefined' ) throw new Error( 'Error, Api Key missing!' );
+// get
 
-	if ( typeof pass == 'undefined' ) throw new Error( 'Error, Api Password missing!' );
+// create
 
-	if ( typeof id == 'undefined' ) throw new Error( 'Error, Theme Id missing!' );
+// dev/watch (update)
+// deploy (update)
 
-};
+// delete
