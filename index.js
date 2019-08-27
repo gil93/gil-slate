@@ -20,6 +20,10 @@ const https = require( 'https' );
 
 const os = require( 'os' );
 
+const browserSync = require( 'browser-sync' );
+
+const connectBrowserSync = require( 'connect-browser-sync' );
+
 const express = require( 'express' );
 
 const proxy = require( 'express-http-proxy' );
@@ -68,10 +72,28 @@ app
 
 ;
 
+browserSync
+
+	.create()
+
+	.init({
+
+		proxy: `https://${SHOP_NAME}?preview_theme_id=${SHOP_THEME_ID}`,
+		port: PORT || 8080,
+		https: {
+			cert: path.resolve( os.homedir(), '.localhost_ssl/server.crt' ),
+			key: path.resolve( os.homedir(), '.localhost_ssl/server.key' )
+		},
+		open: true
+
+	})
+
+;
+
 https
 
 	.createServer( { cert, key }, app )
 
-	.listen( PORT || 8080 )
+	.listen( app.get( 'port' ) )
 
 ;
