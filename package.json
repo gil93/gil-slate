@@ -2,12 +2,12 @@
   "name": "gil-slate",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "ssl": "./ssl-check.sh",
-    "start": "npm run ssl && webpack-dev-server --open"
+    "start": "npm run ssl && nodemon"
   },
-  "author": "",
+  "author": "Gil",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -20,19 +20,18 @@
     "core-js": "^3.2.1",
     "css-loader": "^3.2.0",
     "dotenv": "^8.1.0",
+    "express-http-proxy": "^1.5.1",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
     "os": "^0.1.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",
-    "shopify-api": "^0.2.3",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
-  },
-  "dependencies": {}
+    "webpack-cli": "^3.3.7"
+  }
 }

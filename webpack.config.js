@@ -1,11 +1,3 @@
-const path = require( 'path' );
-
-const dotenv = require( 'dotenv' );
-
-const webpack = require( 'webpack' );
-
-const os = require( 'os' );
-
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
@@ -16,13 +8,6 @@ const dev = process.env.NODE_ENV !== 'production' ? true : false;
 
 const env = dev ? 'development' : 'production';
 
-const devServer = {
-	https: {
-		cert: path.resolve( os.homedir(), '.localhost_ssl/server.crt' ),
-		key: path.resolve( os.homedir(), '.localhost_ssl/server.key' )
-	}
-};
-
 module.exports = async () => {
 
 	return {
@@ -31,7 +16,6 @@ module.exports = async () => {
 		mode: env,
 		devtool: dev ? 'eval-source-map' : 'none',
 		watch: dev,
-		devServer,
 		module: {
 			rules: [
 				{
